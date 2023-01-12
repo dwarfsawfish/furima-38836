@@ -11,7 +11,7 @@
 | last_name                       | string  | null: false |
 | kana_first_name                 | string  | null: false |
 | kana_lastname                   | string  | null: false |
-| birthday                        | date    | null: false |
+| birth_day                       | date    | null: false |
 
 
 ### Association
@@ -60,15 +60,15 @@
 
 ## shipping_address テーブル
 
-| Column          | Type       | Options                        |
-| --------------- | ---------- | ------------------------------ |
-| postal_code     | string     | null: false                    |
-| phone_number    | string     | null: false                    |
-| prefecture_id   | integer    | null: false                    |
-| municipalities  | string     | null: false                    |
-| address         | string     | null: false                    |
-| building        | string     |                                |
-| purchase        | references | null: false, foreign_key: true |
+| Column              | Type       | Options                        |
+| ------------------- | ---------- | ------------------------------ |
+| postal_code         | string     | null: false                    |
+| phone_number        | string     | null: false                    |
+| sender_address_id   | integer    | null: false, foreign_key: true |
+| municipalities      | string     | null: false                    |
+| address             | string     | null: false                    |
+| building            | string     |                                |
+| purchase            | references | null: false, foreign_key: true |
 
 ### Association
 
