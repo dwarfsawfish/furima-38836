@@ -68,7 +68,7 @@
 | municipalities      | string     | null: false                    |
 | address             | string     | null: false                    |
 | building            | string     |                                |
-| purchases           | references | null: false, foreign_key: true |
+| purchase            | references | null: false, foreign_key: true |
 
 ### Association
 
