@@ -7,12 +7,11 @@
 | nickname                        | string  | null: false |
 | email                           | string  | null: false, unique: true |
 | encrypted_password              | string  | null: false |
-| encrypted_password_confirmation | string  | null: false |
 | first_name                      | string  | null: false |
 | last_name                       | string  | null: false |
 | kana_first_name                 | string  | null: false |
 | kana_lastname                   | string  | null: false |
-| birthday                        | integer | null: false |
+| birthday                        | date    | null: false |
 
 
 ### Association
@@ -28,12 +27,12 @@
 | ----------------- | -------    | ----------- |
 | name              | string     | null: false |
 | content           | text       | null: false |
-| category          | string     | null: false |
+| category_id       | integer    | null: false |
 | price             | integer    | null: false |
-| status            | string     | null: false |
-| postage           | string     | null: false |
-| sender's_address  | string     | null: false |
-| days_to_ship      | string     | null: false |
+| status_id         | integer    | null: false |
+| postage_id        | integer    | null: false |
+| sender_address_id | integer    | null: false |
+| day_to_ship_id    | integer    | null: false |
 | user              | references | null: false,foreign_key: true |
 
 
@@ -44,7 +43,7 @@
 
 
 
-## purchases テーブル
+## purchase テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -63,14 +62,14 @@
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
-| postal_code     | integer    | null: false                    |
-| phone_number    | integer    | null: false                    |
-| prefecture      | integer    | null: false                    |
+| postal_code     | string     | null: false                    |
+| phone_number    | string     | null: false                    |
+| prefecture_id   | integer    | null: false                    |
 | municipalities  | string     | null: false                    |
 | address         | string     | null: false                    |
 | building        | string     |                                |
-| user            | references | null: false,foreign_key: true  |
+| purchase        | references | null: false, foreign_key: true |
 
 ### Association
 
--belongs_to :purchases
+-belongs_to :purchase
