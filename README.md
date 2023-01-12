@@ -65,7 +65,7 @@
 | postal_code         | string     | null: false                    |
 | phone_number        | string     | null: false                    |
 | sender_address_id   | integer    | null: false                    |
-| municipalities      | string     | null: false                    |
+| municipality      | string     | null: false                    |
 | address             | string     | null: false                    |
 | building            | string     |                                |
 | purchase            | references | null: false, foreign_key: true |
