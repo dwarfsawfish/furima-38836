@@ -10,7 +10,7 @@
 | first_name                      | string  | null: false |
 | last_name                       | string  | null: false |
 | kana_first_name                 | string  | null: false |
-| kana_lastname                   | string  | null: false |
+| kana_last_name                  | string  | null: false |
 | birth_day                       | date    | null: false |
 
 
@@ -43,7 +43,7 @@
 
 
 
-## purchase テーブル
+## purchases テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -58,7 +58,7 @@
 -has_one :shipping_address
 
 
-## shipping_address テーブル
+## shipping_addresses テーブル
 
 | Column              | Type       | Options                        |
 | ------------------- | ---------- | ------------------------------ |
@@ -68,7 +68,7 @@
 | municipalities      | string     | null: false                    |
 | address             | string     | null: false                    |
 | building            | string     |                                |
-| purchase            | references | null: false, foreign_key: true |
+| purchases           | references | null: false, foreign_key: true |
 
 ### Association
 
