@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
   def move_to_sign_in
     return if user_signed_in?
 
-    redirect_to new_user_registration_path
+    redirect_to new_user_session_path
   end
 
   def item_params
