@@ -118,17 +118,16 @@ RSpec.describe User, type: :model do
       end
 
       it 'passwordは数値のみでは登録できない' do
-        @user.password = "111111"
+        @user.password = '111111'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is invalid")
+        expect(@user.errors.full_messages).to include('Password is invalid')
       end
 
       it 'passwordは全角英数字では保存できない' do
-        @user.password = "ＴＴＴ３３３"
+        @user.password = 'ＴＴＴ３３３'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is invalid")
+        expect(@user.errors.full_messages).to include('Password is invalid')
       end
-
     end
   end
 end
