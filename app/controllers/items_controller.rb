@@ -15,14 +15,15 @@ class ItemsController < ApplicationController
   end
 
   private
+
   def move_to_sign_in
-    unless user_signed_in?
-      redirect_to new_user_registration_path
-    end
+    return if user_signed_in?
+
+    redirect_to new_user_registration_path
   end
 
-  private
   def item_params
-    params.require(:item).permit(:name, :content, :price, :image, :category_id, :status_id, :postage_id, :sender_address_id, :day_to_ship_id).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :content, :price, :image, :category_id, :status_id, :postage_id, :sender_address_id,
+                                 :day_to_ship_id).merge(user_id: current_user.id)
   end
 end

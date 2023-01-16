@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :item do
-    name               { "シャツ" }
+    name               { 'シャツ' }
     content            { Faker::Lorem.sentence }
     price              { 1000 }
     category_id        { 2 }
