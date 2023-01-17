@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :move_to_sign_in, except: [:index, :show]
   before_action :authenticate_user!, only: :edit
-  before_action :find_item, only: [:show, :edit, :update]
+  before_action :find_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @items = Item.all.order('created_at DESC')
@@ -36,10 +36,9 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = Item.find(params[:id])
-    return unless user_signed_in? && current_user.id == item.user_id
+    return unless user_signed_in? && current_user.id == @item.user_id
 
-    item.destroy
+    @item.destroy
     redirect_to root_path
   end
 
