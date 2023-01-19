@@ -17,7 +17,7 @@
 ### Association
 
 - has_many :items
-- has_many :purchases
+- has_many :orders
 
 
 
@@ -39,11 +39,11 @@
 ### Association
 
 -belongs_to :user
--has_one :purchase
+-has_one :order
 
 
 
-## purchases テーブル
+## orders テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -65,11 +65,11 @@
 | postal_code         | string     | null: false                    |
 | phone_number        | string     | null: false                    |
 | sender_address_id   | integer    | null: false                    |
-| municipality      | string     | null: false                    |
+| municipality        | string     | null: false                    |
 | address             | string     | null: false                    |
 | building            | string     |                                |
-| purchase            | references | null: false, foreign_key: true |
+| order               | references | null: false, foreign_key: true |
 
 ### Association
 
--belongs_to :purchase
+-belongs_to :order

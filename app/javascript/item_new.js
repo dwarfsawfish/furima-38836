@@ -1,13 +1,18 @@
-window.addEventListener('load', () => {
+const item = () => {
   const itemPrice = document.getElementById("item-price")
   addEventListener('change', () => {
-    const num = itemPrice.value;
+    if (itemPrice){
 
-    const addTaxPrice = document.getElementById("add-tax-price");
-    addTaxPrice.innerHTML = Math.floor(num * 0.1);
+      const num = itemPrice.value;
 
-    const profit = document.getElementById("profit");
-    profit.innerHTML = Math.floor(num - (num * 0.1));
-    
+      const addTaxPrice = document.getElementById("add-tax-price");
+      addTaxPrice.innerHTML = Math.floor(num * 0.1);
+  
+      const profit = document.getElementById("profit");
+      profit.innerHTML = Math.floor(num - (num * 0.1));
+      
+    };
   });
-});
+};
+
+window.addEventListener('load', item);
