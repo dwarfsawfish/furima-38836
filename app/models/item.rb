@@ -18,5 +18,6 @@ class Item < ApplicationRecord
   belongs_to :sender_address
   belongs_to :day_to_ship
   belongs_to :user
+  has_one :order
   has_one_attached :image
 end

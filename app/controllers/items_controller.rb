@@ -57,6 +57,8 @@ class ItemsController < ApplicationController
   end
 
   def redirect_to_root_path
-    redirect_to root_path unless user_signed_in? && current_user.id == @item.user_id
+    return unless current_user.id != @item.user_id || !@item.order.nil?
+
+    redirect_to root_path
   end
 end
