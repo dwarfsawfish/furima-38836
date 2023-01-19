@@ -83,13 +83,41 @@ RSpec.describe OrderAddress, type: :model do
           expect(@order_address.errors.full_messages).to include("Phone number is invalid")
         end
 
-        it '電話番号の文字数の規定を超えている時' do
-          @order_address.phone_number = "090-1111-222222222"
+        it '電話番号が９桁以下の時' do
+          @order_address.phone_number = "0901111"
           @order_address.valid?
           expect(@order_address.errors.full_messages).to include("Phone number is invalid")
         end
+
+        it '電話番号が12桁以下の時' do
+          @order_address.phone_number = "0901111222222"
+          @order_address.valid?
+          expect(@order_address.errors.full_messages).to include("Phone number is invalid")
+        end
+
+        it 'tokenが空の時' do
+          @order_address.token = ""
+          @order_address.valid?
+          expect(@order_address.errors.full_messages).to include("Token can't be blank")
+        end
+
+        it 'userが紐づいてない時' do
+          @order_address.user_id = nil
+          @order_address.valid?
+          expect(@order_address.errors.full_messages).to include("User can't be blank")
+        end
+
+        it 'itemが紐づいてない時' do
+          @order_address.item_id = nil
+          @order_address.valid?
+          expect(@order_address.errors.full_messages).to include("Item can't be blank")
+        end
+        
       end
   end
 end
+
+
+
 
 
