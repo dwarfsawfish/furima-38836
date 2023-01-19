@@ -23,15 +23,6 @@
       </span>
     </div>
 
-    <%# 叶えたいこと %>
-<%# ログイン中の出品者は、販売中の商品を編集・削除できる %>
-<%# ログイン中の他人は、販売中の商品を購入できる%>
-
-<%# ログイン中&販売中%>
-  <%# 出品者%>
-  <%# 出品者じゃない%>
-
-<%# 元々@item.order.present? としていたのを、@item.order==nilに変えたら成功したのは何故か↓%>
     <% if user_signed_in? && @item.order == nil %>
 
       <% if current_user.id == @item.user_id %>
